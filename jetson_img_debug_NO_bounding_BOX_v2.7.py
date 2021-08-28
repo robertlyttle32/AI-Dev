@@ -319,7 +319,19 @@ def collectData():
             #print ('x_position:{} y_position:{}'.format(x, y))
 
             #Set trigger x or y trigger position here
-            if 200 < x < 600:
+            if 100 < x < 300:
+                MESSAGE = 'START_ENTRY'
+                print(MESSAGE)            
+            if 400 < x < 600:
+                MESSAGE = 'STOP_ENTRY'
+                print(MESSAGE)
+            if 600 < x < 800:
+                MESSAGE = 'START_EXIT'
+                print(MESSAGE)
+            if 800 < x < 1000:
+                MESSAGE = 'STOP_EXIT'
+                print(MESSAGE)
+
                 if class_desc == FILTER1:
                     if confidence >= 1:
                         t1 = time.time()
@@ -367,14 +379,14 @@ def collectData():
                     description_id = object_name
                     #confidence = int(confidence * 100)
                     color = 0          #vehicle color
-                    axle_count = 0 #objects ##
+                    axle_count = MESSAGE #objects ##
                     license_plate = 0 #######
                     rfid = 0 ################
                     image_path = v_out
                     lane_id = 0
                     speed = 0
                     #INSERT INTO DATABASE
-                    data =  (time_stamp, location, description, description_id, Confidence, color, axel_count, license_plate, rfid, speed, lane_id, image_path)
+                    data =  (time_stamp, location, description, description_id, Confidence, color, axle_count, license_plate, rfid, speed, lane_id, image_path)
                     conn.execute('INSERT INTO DATA_AQUISITION2 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', data)
                     conn.commit()
                     #class_id_detectNet = 0
