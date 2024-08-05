@@ -28,9 +28,9 @@ def capture_image():
 # Function to send an email with the captured image as an attachment
 def send_email(image_path):
     # Email configuration
-    sender_email = "robert.lyttle32@gmail.com"
-    receiver_email = "robert.lyttle32@hotmail.com" # "lyttle_79_hotmail.com"
-    password = "ivrj quas dbil jyfs"  #          "July25@2022"
+    sender_email = "email@gmail.com"
+    receiver_email = "email@hotmail.com"
+    password = "password" 
 
     # Create a multipart message
     message = MIMEMultipart()
